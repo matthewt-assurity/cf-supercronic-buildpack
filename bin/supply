@@ -25,4 +25,4 @@ chmod +x $SUPERCRONIC
 # mv "$SUPERCRONIC" "$output_dir/supply/${SUPERCRONIC}"
 # ln -s "$output_dir/supply/${SUPERCRONIC}" $output_dir/supply/supercronic
 
-$output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"
+# $output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"

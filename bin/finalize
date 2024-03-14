@@ -14,6 +14,6 @@ output_dir=$(mktemp -d -t supplyXXX)
 
 echo "Installing supercronic"
 mkdir -p "${DEPS_DIR}/${DEPS_IDX}/supercronic"
-chmod +x "${DEPS_DIR}/${DEPS_IDX}/supercronic/bin/supercronic"
+# chmod +x "${DEPS_DIR}/${DEPS_IDX}/supercronic/bin/supercronic"
 
-export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"
+# export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"

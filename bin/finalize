@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# https://www.howtogeek.com/782514/how-to-use-set-and-pipefail-in-bash-scripts-on-linux/
+set -euo pipefail 
+
+# https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html
+BUILD_DIR="${1}"
+CACHE_DIR="${2}"
+DEPS_DIR="${3}"
+DEPS_IDX="${4}"
+
+BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+output_dir=$(mktemp -d -t supplyXXX)
+
+echo "Installing supercronic"
+mkdir -p "${DEPS_DIR}/${DEPS_IDX}/supercronic"
+chmod +x ${DEPS_DIR}/${DEPS_IDX}/supercronic/bin/supercronic"
+
+export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"

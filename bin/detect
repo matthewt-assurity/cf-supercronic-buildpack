@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
-echo "running detect"
-
 # detect disabled, must explicitly specify buildpack
 exit 1

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "running supply"
-
 # https://www.howtogeek.com/782514/how-to-use-set-and-pipefail-in-bash-scripts-on-linux/
 set -euo pipefail 
 
@@ -14,7 +12,7 @@ DEPS_IDX="${4}"
 BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
 output_dir=$(mktemp -d -t supplyXXX)
 
-echo "Installing supercronic"
+echo "Running supercronic supply"
 
 # https://github.com/aptible/supercronic/releases/tag/v0.2.29
 SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.2.29/supercronic-linux-amd64
@@ -22,9 +20,9 @@ SUPERCRONIC=supercronic-linux-amd64
 SUPERCRONIC_SHA1SUM=cd48d45c4b10f3f0bfdd3a57d054cd05ac96812b
 
 curl -fsSLO "$SUPERCRONIC_URL"
-echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c
-chmod +x $SUPERCRONIC
+# echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c
+# chmod +x $SUPERCRONIC
 # mv "$SUPERCRONIC" "$output_dir/supply/${SUPERCRONIC}"
 # ln -s "$output_dir/supply/${SUPERCRONIC}" $output_dir/supply/supercronic
 
-# $output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"
+$output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"

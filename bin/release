@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+echo "running release"
+
 # bin/release <build-dir>
 set -e
 

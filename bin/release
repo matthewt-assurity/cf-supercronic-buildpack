@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
-
-echo "running release"
-
 # bin/release <build-dir>
-set -e
-
-BUILD_DIR=$(cd "$1/" && pwd)
-BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
-
-cp "${BUILDPACK_DIR}/supercronic-linux-amd64" "${BUILD_DIR}/supercronic-linux-amd64"
-chmod +x "${BUILD_DIR}/supercronic-linux-amd64"
 
 cat <<EOF
 ---

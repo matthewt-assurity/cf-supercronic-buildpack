@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
+echo "running supercronic RELEASE"
+
 cat <<EOF
 ---
 default_process_types:

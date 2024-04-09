@@ -30,4 +30,6 @@ ls "${DEPS_DIR}/${DEPS_IDX}"
 
 chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"
 
+export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"
+
 echo "Got to end of finalize"

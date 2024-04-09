@@ -2,12 +2,16 @@
 # bin/release <build-dir>
 set -e
 
-echo "running supercronic RELEASE"
+BUILD_DIR=$(cd "$1/" && pwd)
+
+BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+
+export SUPERCRONIC_ROOT="${SUPERCRONIC_ROOT}"
 
 cat <<EOF
 ---
 default_process_types:
-  web: /home/vcap/app/supercronic-linux-amd64
+  web: ${SUPERCRONIC_ROOT}"
 EOF
 
 echo "Got to the end of release"

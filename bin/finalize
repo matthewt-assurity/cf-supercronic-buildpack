@@ -15,8 +15,10 @@ output_dir=$(mktemp -d -t finalizeXXX)
 
 SUPERCRONIC_DIR="${DEPS_DIR}/${DEPS_IDX}/supercronic"
 
+echo "Running ls on DEPS_DIR"
 ls "${DEPS_DIR}"
 
+echo "Running ls on DEPS_DIR/DEPS_IDX"
 ls "${DEPS_DIR}/${DEPS_IDX}"
 
 echo "running supercronic FINALIZE"

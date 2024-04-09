@@ -18,11 +18,13 @@ SUPERCRONIC_DIR="${DEPS_DIR}/${DEPS_IDX}/supercronic"
 echo "Running ls on DEPS_DIR"
 ls "${DEPS_DIR}"
 
-echo "Running ls on DEPS_DIR/DEPS_IDX"
-ls "${DEPS_DIR}/${DEPS_IDX}"
-
 echo "running supercronic FINALIZE"
 
 echo "-----> Installing Supercronic"
 mkdir -p "${SUPERCRONIC_DIR}"
+
+echo "Running ls on DEPS_DIR/DEPS_IDX"
+ls "${DEPS_DIR}/${DEPS_IDX}"
+
+
 chmod +x "${SUPERCRONIC_DIR}/bin/supercronic-linux-amd64"

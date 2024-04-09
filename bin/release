@@ -3,8 +3,11 @@
 
 echo "running supercronic RELEASE"
 
-cat <<EOF
----
-default_process_types:
-  web: /home/vcap/app/supercronic-linux-amd64
-EOF
+# cat <<EOF
+# ---
+# default_process_types:
+#   web: /home/vcap/app/supercronic-linux-amd64
+# EOF
+
+echo "Got to the end of release"
+sleep infinity

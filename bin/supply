@@ -25,5 +25,6 @@ then
     echo "-----> Using Supercronic from cache"
 else
     echo "-----> Downloading Supercronic"
-    curl -fsSLO "$SUPERCRONIC_URL"
+    curl -fsSLO "${SUPERCRONIC_URL}"
+    mv "${SUPERCRONIC}" "${CACHE_DIR}/${SUPERCRONIC}"
 fi

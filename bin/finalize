@@ -14,6 +14,7 @@ BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
 output_dir=$(mktemp -d -t finalizeXXX)
 
 SUPERCRONIC_DIR="${DEPS_DIR}/${DEPS_IDX}/supercronic"
+SUPERCRONIC=supercronic-linux-amd64
 
 echo "Running ls on DEPS_DIR"
 ls "${DEPS_DIR}"
@@ -22,9 +23,9 @@ echo "running supercronic FINALIZE"
 
 echo "-----> Installing Supercronic"
 mkdir -p "${SUPERCRONIC_DIR}"
+cp "${CACHE_DIR}/${SUPERCRONIC}" "${SUPERCRONIC_DIR}"
 
 echo "Running ls on DEPS_DIR/DEPS_IDX"
 ls "${DEPS_DIR}/${DEPS_IDX}"
 
-
-chmod +x "${SUPERCRONIC_DIR}/bin/supercronic-linux-amd64"
+chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"

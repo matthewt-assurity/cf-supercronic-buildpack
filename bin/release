@@ -3,6 +3,6 @@
 
 cat <<EOF
 ---
-config_vars:
-
+default_process_types:
+  web: /home/vcap/app/..supercronic.sh
 EOF

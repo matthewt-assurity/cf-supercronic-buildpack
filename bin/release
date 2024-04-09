@@ -2,9 +2,9 @@
 # bin/release <build-dir>
 set -e
 
-BUILD_DIR=$(cd "$1/" && pwd)
+# BUILD_DIR=$(cd "$1/" && pwd)
 
-BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+# BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
 
 export SUPERCRONIC_ROOT="${SUPERCRONIC_ROOT}"
 

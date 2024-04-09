@@ -10,6 +10,7 @@ DEPS_DIR="${3}"
 DEPS_IDX="${4}"
 
 BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+
 output_dir=$(mktemp -d -t supplyXXX)
 
 echo "Running supercronic SUPPLY"
@@ -19,10 +20,10 @@ SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.2.29
 SUPERCRONIC=supercronic-linux-amd64
 SUPERCRONIC_SHA1SUM=cd48d45c4b10f3f0bfdd3a57d054cd05ac96812b
 
-curl -fsSLO "$SUPERCRONIC_URL"
-echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c
-# chmod +x $SUPERCRONIC
-# mv "$SUPERCRONIC" "$output_dir/supply/${SUPERCRONIC}"
-# ln -s "$output_dir/supply/${SUPERCRONIC}" $output_dir/supply/supercronic
-
-# $output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"
+if [ -f "${CACHE_DIR}"/"${SUPERCRONIC}" ]
+then
+    echo "-----> Using Supercronic from cache"
+else
+    echo "-----> Downloading Supercronic"
+    curl -fsSLO "$SUPERCRONIC_URL"
+fi

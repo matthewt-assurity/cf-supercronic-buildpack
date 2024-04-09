@@ -29,3 +29,5 @@ echo "Running ls on DEPS_DIR/DEPS_IDX"
 ls "${DEPS_DIR}/${DEPS_IDX}"
 
 chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"
+
+echo "Got to end of finalize"

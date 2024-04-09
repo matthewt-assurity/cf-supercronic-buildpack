@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep infinity
+
 # https://www.howtogeek.com/782514/how-to-use-set-and-pipefail-in-bash-scripts-on-linux/
 set -euo pipefail 
 

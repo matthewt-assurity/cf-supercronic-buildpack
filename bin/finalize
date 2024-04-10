@@ -10,32 +10,18 @@ DEPS_DIR="${3}"
 DEPS_IDX="${4}"
 
 BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
-
-output_dir=$(mktemp -d -t finalizeXXX)
-
-SUPERCRONIC_DIR="${DEPS_DIR}/${DEPS_IDX}/supercronic"
-SUPERCRONIC=supercronic-linux-amd64
-
-echo "Running ls on DEPS_DIR"
-ls "${DEPS_DIR}"
-
-echo "running supercronic FINALIZE"
+source ${BUILDPACK_DIR}/parameters.sh
 
 echo "-----> Installing Supercronic"
 mkdir -p "${SUPERCRONIC_DIR}"
 cp "${CACHE_DIR}/${SUPERCRONIC}" "${SUPERCRONIC_DIR}"
-
-echo "Running ls on DEPS_DIR/DEPS_IDX"
-ls "${DEPS_DIR}/${DEPS_IDX}"
-
 chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"
 
-echo "-----> Symlinking properties and default configuration"
-
+echo "-----> Setting up .profile.d script"
 mkdir -p "$BUILD_DIR/.profile.d"
-
+# The below is done is so the SUPERCRONIC_ROOT env var is accessible to the release script
 cat <<EOF > "$BUILD_DIR/.profile.d/0010_supercronic.sh"
+export SUPERCRONIC_VERSION=${SUPERCRONIC_VERSION}
 export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"
+export SUPERCRONIC_FILE="${SUPERCRONIC_FILE}"
 EOF
-
-echo "Got to end of finalize"

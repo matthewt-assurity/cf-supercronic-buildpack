@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 export SUPERCRONIC_ROOT="${SUPERCRONIC_ROOT}"
+export SUPERCRONIC_FILE="${SUPERCRONIC_FILE}"
 
-echo "${SUPERCRONIC_ROOT}"
-
-echo "Starting supercronic"
-
-$(${SUPERCRONIC_ROOT}/supercronic-linux-amd64)
+echo "-----> Executing supercronic..."
+$(${SUPERCRONIC_ROOT}/${SUPERCRONIC_FILE})

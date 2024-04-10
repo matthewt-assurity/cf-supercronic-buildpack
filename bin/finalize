@@ -15,7 +15,7 @@ source ${BUILDPACK_DIR}/parameters.sh
 echo "-----> Installing Supercronic"
 mkdir -p "${SUPERCRONIC_DIR}"
 cp "${CACHE_DIR}/${SUPERCRONIC_FILE}" "${SUPERCRONIC_DIR}"
-chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"
+chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC_FILE}"
 
 echo "-----> Setting up .profile.d script"
 mkdir -p "$BUILD_DIR/.profile.d"

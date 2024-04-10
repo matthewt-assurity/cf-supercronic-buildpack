@@ -30,6 +30,12 @@ ls "${DEPS_DIR}/${DEPS_IDX}"
 
 chmod +x "${SUPERCRONIC_DIR}/${SUPERCRONIC}"
 
+echo "-----> Symlinking properties and default configuration"
+
+mkdir -p "$BUILD_DIR/.profile.d"
+
+cat <<EOF > "$BUILD_DIR/.profile.d/0010_supercronic.sh"
 export SUPERCRONIC_ROOT="/home/vcap/deps/${DEPS_IDX}/supercronic"
+EOF
 
 echo "Got to end of finalize"
